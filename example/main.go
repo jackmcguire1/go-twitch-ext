@@ -4,13 +4,13 @@ import (
 	"log"
 	"os"
 
-	twitch "github.com/jackmcguire1/go-twitch-ext"
+	"github.com/jackmcguire1/go-twitch-ext"
 )
 
-var twitchPkg *twitch.Twitch
+var twitchPkg *twitchext.Twitch
 
 func init() {
-	twitchPkg = twitch.NewClient(
+	twitchPkg = twitchext.NewClient(
 		os.Getenv("OWNER_ID"),
 		os.Getenv("CLIENT_ID"),
 		os.Getenv("EXT_SECRET"),
@@ -22,8 +22,8 @@ func init() {
 func main() {
 	claims := twitchPkg.CreateClaims(
 		"35851594",
-		twitch.BroadcasterRole,
-		twitch.FormBroadcastSendPubSubPermissions(),
+		twitchext.BroadcasterRole,
+		twitchext.FormBroadcastSendPubSubPermissions(),
 	)
 	token, err := twitchPkg.JWTSign(claims)
 	if err != nil {
