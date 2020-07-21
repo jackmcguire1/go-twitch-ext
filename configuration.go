@@ -60,7 +60,7 @@ type Record struct {
 // is for.
 type Segment struct {
 	Segment   string `json:"segment_type"`
-	ChannelID string `json:"channel_id,omit_empty"`
+	ChannelID string `json:"channel_id,omitempty"`
 }
 
 // SetGlobalSegment sets global extension configuration
