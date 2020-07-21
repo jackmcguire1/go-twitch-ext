@@ -48,39 +48,40 @@ func TestRunner(t *testing.T) {
 		test.TestToJSONArray()
 	})
 
-	t.Run("A=jwt", func(t *testing.T) {
-		test := JWTTests{Test: t}
-		test.TestCreateClaims()
-		test.TestJWTSign()
-		test.TestJWTVerify()
-	})
-
-	t.Run("A=messaging", func(t *testing.T) {
-		test := MessagingAndPubSubTests{Test: t}
-		test.TestFormPubSubPermissions()
-		test.TestSendTwitchChatMessageWithMessageLimitExceeded()
-		test.TestSendTwitchChatMessage()
-		test.TestPublishChannelNotification()
-		test.TestPublishWhisperNotification()
-		test.TestPublishGlobalNotification()
-	})
-
-	t.Run("A=config", func(t *testing.T) {
-		test := ConfigurationTests{Test: t}
-		test.TestSetGlobalSegment()
-		test.TestSetBroadcasterSegment()
-		test.TestSetDeveloperSegment()
-		test.TestSetExtensionRequired()
-		test.TestGetBroadcasterSegment()
-		test.TestGetDeveloperSegment()
-		test.TestGetAllChannelConfigurations()
-		test.TestGetGlobalSegment()
-	})
-
-	t.Run("A=channel", func(t *testing.T) {
-		test := ChannelInfoTests{Test: t}
-		test.TestGetLiveChannelsWithExtensionEnabled()
-	})
+	//TODO test without Twitch production API
+	//t.Run("A=jwt", func(t *testing.T) {
+	//	test := JWTTests{Test: t}
+	//	test.TestCreateClaims()
+	//	test.TestJWTSign()
+	//	test.TestJWTVerify()
+	//})
+	//
+	//t.Run("A=messaging", func(t *testing.T) {
+	//	test := MessagingAndPubSubTests{Test: t}
+	//	test.TestFormPubSubPermissions()
+	//	test.TestSendTwitchChatMessageWithMessageLimitExceeded()
+	//	test.TestSendTwitchChatMessage()
+	//	test.TestPublishChannelNotification()
+	//	test.TestPublishWhisperNotification()
+	//	test.TestPublishGlobalNotification()
+	//})
+	//
+	//t.Run("A=config", func(t *testing.T) {
+	//	test := ConfigurationTests{Test: t}
+	//	test.TestSetGlobalSegment()
+	//	test.TestSetBroadcasterSegment()
+	//	test.TestSetDeveloperSegment()
+	//	test.TestSetExtensionRequired()
+	//	test.TestGetBroadcasterSegment()
+	//	test.TestGetDeveloperSegment()
+	//	test.TestGetAllChannelConfigurations()
+	//	test.TestGetGlobalSegment()
+	//})
+	//
+	//t.Run("A=channel", func(t *testing.T) {
+	//	test := ChannelInfoTests{Test: t}
+	//	test.TestGetLiveChannelsWithExtensionEnabled()
+	//})
 	//
 	//t.Run("A=secrets", func(t *testing.T) {
 	//	test := SecretTests{Test: t}

@@ -93,10 +93,12 @@ func (t *Twitch) do(
 		)
 		return
 	default:
+		body, _ := ioutil.ReadAll(resp.Body)
 		err = fmt.Errorf(
-			"unsupported response httpCode:%d status:%s",
+			"unsupported response httpCode:%d status:%s body:%q",
 			resp.StatusCode,
 			resp.Status,
+			string(body),
 		)
 		return
 	}
