@@ -110,7 +110,7 @@ func (t *Twitch) PublishWhisperNotification(channelID string, opaqueId string, i
 // all channels with the twitch extension enabled.
 // https://dev.twitch.tv/docs/extensions/reference/#send-extension-pubsub-message
 func (t *Twitch) PublishGlobalNotification(i interface{}) (res *ResponseCommon, err error) {
-	url := fmt.Sprintf("https://api.twitch.tv/extensions/message/all")
+	url := "https://api.twitch.tv/extensions/message/all"
 	claims := t.CreateClaims("", ExternalRole, FormGlobalSendPubSubPermissions())
 
 	data := &pubSubNotification{
